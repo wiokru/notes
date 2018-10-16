@@ -27,7 +27,7 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
     }
 
     @ExceptionHandler(NoteNotFoundException.class)
-    public final ResponseEntity<Object> handleUserNotFoundException(NoteNotFoundException ex, WebRequest request) {
+    public final ResponseEntity<Object> handleNoteNotFoundException(NoteNotFoundException ex, WebRequest request) {
         ExceptionResponse exceptionResponse = new ExceptionResponse(LocalDateTime.now(), HttpStatus.NOT_FOUND, ex.getMessage(),
                 request.getDescription(false));
         return new ResponseEntity<>(exceptionResponse, HttpStatus.NOT_FOUND);
