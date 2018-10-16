@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "notes")
 
-// creationDate and modificationDate should be filled automaticly
+// creationDate and modificationDate should be filled automatically
 @EntityListeners(AuditingEntityListener.class)
 @JsonIgnoreProperties(value = {"creationDate", "modificationDate"}, allowGetters = true)
 
@@ -36,14 +36,30 @@ public class Note {
     @LastModifiedDate
     private LocalDateTime modificationDate;
 
+    private Integer versionNumber;
+    private Long idOfParentNote; //for old versions of notes
+    private boolean isArchivedNoteVersion;
+    private boolean isDeleted;
+
     public Note() {
     }
 
-    public Note(String title, String content, LocalDateTime creationDate, LocalDateTime modificationDate) {
+    public Note(@NotBlank String title, @NotNull String content, LocalDateTime creationDate, LocalDateTime modificationDate,
+                Integer versionNumber) {
         this.title = title;
         this.content = content;
         this.creationDate = creationDate;
         this.modificationDate = modificationDate;
+        this.versionNumber = versionNumber;
+    }
+
+    public Note(Note note) {
+        this.title = note.title;
+        this.content = note.content;
+        this.creationDate = note.creationDate;
+        this.modificationDate = note.modificationDate;
+        this.versionNumber = note.versionNumber;
+        this.isDeleted = note.isDeleted;
     }
 
     public Long getId() {
@@ -84,5 +100,37 @@ public class Note {
 
     public void setModificationDate(LocalDateTime modificationDate) {
         this.modificationDate = modificationDate;
+    }
+
+    public Integer getVersionNumber() {
+        return versionNumber;
+    }
+
+    public void setVersionNumber(Integer versionNumber) {
+        this.versionNumber = versionNumber;
+    }
+
+    public Long getIdOfParentNote() {
+        return idOfParentNote;
+    }
+
+    public void setIdOfParentNote(Long idOfParentNote) {
+        this.idOfParentNote = idOfParentNote;
+    }
+
+    public boolean isArchivedNoteVersion() {
+        return isArchivedNoteVersion;
+    }
+
+    public void setArchivedNoteVersion(boolean archivedNoteVersion) {
+        isArchivedNoteVersion = archivedNoteVersion;
+    }
+
+    public boolean isDeleted() {
+        return isDeleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        isDeleted = deleted;
     }
 }
