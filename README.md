@@ -5,9 +5,26 @@ RESTful service for managing and storing notes in database
 1. Java - 1.8.x
 2. Maven - 3.x.x
 
+## Steps how to build and run the project
+
+1.Clone the project
+https://github.com/wiokru/notes.git
+
+2. Build and run the app using maven
+```
+mvn package
+java -jar target/notes-0.0.1-SNAPSHOT.jar
+```
+You can olso run the app without packaging it. Use:
+```
+mvn spring-boot:run
+```
+
+The app will start running at http://localhost:8080.
+
 ## Example curl commands
 
-1. Command for creating new note (POST)
+**1. Command for creating new note (POST)**
 
 ```curl
 curl -X POST \
@@ -21,7 +38,7 @@ curl -X POST \
 }'
 ```
 
-2. Command for getting all available notes 
+**2. Command for getting all available notes**
 
 ```curl
 curl -X GET \
@@ -30,7 +47,7 @@ curl -X GET \
   -H 'Postman-Token: 237cd36a-0619-4aa9-9102-c2c74b0f6535'
   ```
   
- 3. Command for getting note with id=1
+**3. Command for getting note with id=1**
  
  ```curl
  curl -X GET \
@@ -39,7 +56,7 @@ curl -X GET \
   -H 'Postman-Token: 6148da06-78c9-4373-b172-2fb4c01c7653'
  ```
  
- 4. Command for getting history of note with id=1
+ **4. Command for getting history of note with id=1**
  
  ```curl 
  curl -X GET \
@@ -48,7 +65,7 @@ curl -X GET \
   -H 'Postman-Token: cb114e07-49e8-4aaa-bb40-83ad823899cd'
   ```
   
-5. Command for updating note with id=1
+**5. Command for updating note with id=1**
 
 ```curl
 curl -X PUT \
@@ -62,7 +79,7 @@ curl -X PUT \
 }'
 ```
 
-6. Command for deleting note with id=1
+**6. Command for deleting note with id=1**
 
 ```curl
 curl -X DELETE \
@@ -70,4 +87,4 @@ curl -X DELETE \
   -H 'Cache-Control: no-cache' \
   -H 'Postman-Token: 857ee7f8-d16d-45cc-9126-5111c14c3bd5'
   ```
-  
+  You can use them in Postman or other REST client.
