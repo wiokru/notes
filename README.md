@@ -7,7 +7,7 @@ RESTful service for managing and storing notes in database
 
 ## Steps how to build and run the project
 
-1. Clone the project with http
+1. Clone the project
 ```
 https://github.com/wiokru/notes.git
 ```
