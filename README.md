@@ -1,6 +1,7 @@
 # notes
 RESTful service for managing and storing notes in database
 
+
 ## Requirements
 1. Java - 1.8 or later
 2. Maven - 3+
@@ -22,8 +23,8 @@ grant all on notes.* to 'wiola'@'localhost';
 ```
    2.1. If you changed username and password during previous step do following:		
    Open `src/main/resources/application.properties` and change `spring.datasource.username`
-   and `spring.datasource.password` as per your mysql installation
-
+   and `spring.datasource.password` for the ones you used.
+   
 3. Build and run the app using maven
 ```
 mvn package
