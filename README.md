@@ -1,6 +1,7 @@
 # notes
 RESTful service for managing and storing notes in database
 
+(TODO: add tests for functionalities)
 
 ## Requirements
 1. Java - 1.8 or later
