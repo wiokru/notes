@@ -40,8 +40,7 @@ The app will start running at http://localhost:8080.
 
 ## Example curl commands
 
-**1. Command for creating new note (POST)**
-
+**1. Command for creating new note**
 ```curl
 curl -X POST \
   http://localhost:8080/notes \
