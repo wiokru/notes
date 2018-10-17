@@ -2,8 +2,9 @@
 RESTful service for managing and storing notes in database
 
 ## Requirements
-1. Java - 1.8.x
-2. Maven - 3.x.x
+1. Java - 1.8 or later
+2. Maven - 3+
+3. MySQL - 5.6 or better
 
 ## Steps how to build and run the project
 
@@ -11,7 +12,17 @@ RESTful service for managing and storing notes in database
 ```
 https://github.com/wiokru/notes.git
 ```
-2. Build and run the app using maven
+2. Create the database
+Open MySQL client with a user that can create new users (on Linux you can use command: `sudo mysql --password')
+Enter following commands: 
+```
+create database notes;
+create user 'wiola'@'localhost' identified by 'wiola';
+grant all on notes.* to 'wiola'@'localhost';
+```
+	2.1. If 
+
+3. Build and run the app using maven
 ```
 mvn package
 java -jar target/notes-0.0.1-SNAPSHOT.jar
