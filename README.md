@@ -20,9 +20,9 @@ create database notes;
 create user 'wiola'@'localhost' identified by 'wiola';
 grant all on notes.* to 'wiola'@'localhost';
 ```
-2.1. If you changed username and password during previous step do following:		
-Open `src/main/resources/application.properties` and change `spring.datasource.username`
-and s`pring.datasource.password` as per your mysql installation
+   2.1. If you changed username and password during previous step do following:		
+   Open `src/main/resources/application.properties` and change `spring.datasource.username`
+   and `spring.datasource.password` as per your mysql installation
 
 3. Build and run the app using maven
 ```
