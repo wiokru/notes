@@ -15,7 +15,7 @@ RESTful service for managing and storing notes in database
 https://github.com/wiokru/notes.git
 ```
 2. Create the database
-Open MySQL client with a user that can create new users (on Linux you can use command:
+ Open MySQL client with a user that can create new users (on Linux you can use command:
 `sudo mysql --password`).Enter following commands: 
 ```
 create database notes;
