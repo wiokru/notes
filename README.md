@@ -29,7 +29,7 @@ grant all on notes.* to 'wiola'@'localhost';
    
 3. Build and run the app using maven
 ```
-mvn package
+mvn clean package
 java -jar target/notes-0.0.1-SNAPSHOT.jar
 ```
 You can olso run the app without packaging it. Use:
